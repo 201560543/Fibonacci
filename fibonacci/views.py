@@ -24,7 +24,7 @@ class FibonacciAPIView(View):
         if not number:
             return render(request, 'index.html')
 
-        else:
+        try:
             start_time = time.time()
             input = int(number)
             output = fibonacci(input)
@@ -34,3 +34,5 @@ class FibonacciAPIView(View):
                 'output': output,
                 'latency': str(end_time)
             })
+        except:
+            return render(request, 'index.html')
