@@ -1,1 +1,1 @@
-web: gunicorn fibonn.wsgi --log-file -
+web: gunicorn fibo.wsgi --log-file -
