@@ -6,16 +6,12 @@ import time
 
 # Create your views here.
 def fibonacci(n):
-    a,b = 0,1
-    if n < 0:
-        print("Incorrect input")
-    elif n == 0:
-        return a
-    elif n == 1:
-        return b
+    a,b=1,1
+    if n < 2:
+        return 1
     else:
-        for i in range(2, n):
-            a,b = b, a+b
+        for i in range(2, n+1):
+            a,b = a+b, a
         return b
 
 
@@ -25,7 +21,7 @@ class FibonacciAPIView(View):
 
         number = request.GET.get('value')
 
-        if number is None:
+        if not number:
             return render(request, 'index.html')
 
         else:
