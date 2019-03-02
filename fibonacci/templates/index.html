@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Test</title>
+
+</head>
+<body>
+
+    <section class="fibonacci-ui">
+        <h1>Find nth Fibonacci number</h1>
+        <div class="container">
+            <form method="GET">
+                <input type="search" placeholder="Enter Number" name="value">
+                <button>Enter</button>
+            </form>
+
+            <div>
+                <p><b>Output:</b> {{output}}</p>
+                <br/>
+                <p> <b>Latency:</b> {{latency}} <b>ms</b></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
